@@ -2,6 +2,8 @@ import numpy as np
 from scipy.optimize import minimize, approx_fprime
 import warnings
 
+# The formulas and terminology implemented in this code are teken from the article: Mohammed Jameel and Mohamed Abouhawwash: A new proximity metric based on optimality conditions for single and multi-objective optimization: Method and validation.
+
 
 
 def pbi_kktpm(x, phi_func, g_functions, epsilon=1e-8):
@@ -62,7 +64,7 @@ def pbi_kktpm(x, phi_func, g_functions, epsilon=1e-8):
         penalty = 0.0
         for j in range(J):
             penalty += (u[j] * g_vals[j])**2
-        return eps_k
+        return penalty + eps_k
 
     # Constraint 1 (ineq in SLSQP means >= 0):
     #   eps_k - || grad_phi + sum_j [u_j * grad_g_j] || >= 0
@@ -72,7 +74,7 @@ def pbi_kktpm(x, phi_func, g_functions, epsilon=1e-8):
         grad_sum = np.copy(grad_phi)
         for j in range(J):
             grad_sum += u[j] * grad_g_list[j]
-        return eps_k - np.linalg.norm(grad_sum, 2) ** 2
+        return eps_k - np.linalg.norm(grad_sum, 2) 
 
     # Constraint 2:
     #   sum_j [u_j*g_j] + eps_k >= 0
@@ -105,7 +107,7 @@ def pbi_kktpm(x, phi_func, g_functions, epsilon=1e-8):
     res = minimize(
         fun=objective,
         x0=init_guess,
-        method='SLSQP',
+        method='SLSQP', #The one that resembles fmincon() in Matlab
         constraints=constraints,
         options={'maxiter': 1000, 'ftol': 1e-7}
     )

@@ -8,6 +8,8 @@ import itertools
 import warnings
 
 
+# The formulas and terminology implemented in this code are teken from the article: Mohammed Jameel and Mohamed Abouhawwash: A new proximity metric based on optimality conditions for single and multi-objective optimization: Method and validation.
+
 
 def optimize_u(A, B, G):
     """

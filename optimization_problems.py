@@ -335,12 +335,13 @@ my_problems = [
     
 ]
 pymoo_problems = [
+    "zdt1",             # ZDT1 Problem (2 objectives)
     "g1",
     "g2",
     "g3",
     "g4",
-    "zdt1",             # ZDT1 Problem (2 objectives)
-#    "zdt2",             # ZDT2 Problem (2 objectives)
+
+    "zdt2",             # ZDT2 Problem (2 objectives)
 #    "zdt3",             # ZDT3 Problem (2 objectives)
 #    "zdt4",             # ZDT4 Problem (2 objectives)
 #    "zdt6",             # ZDT6 Problem (2 objectives)
