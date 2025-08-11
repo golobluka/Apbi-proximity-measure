@@ -18,6 +18,4 @@ The repository includes two Jupyter notebooks that demonstrate the usage of thes
 * **`running_nsga_and_plotting.ipynb`:** This notebook executes the NSGA-II algorithm and plots the implemented proximity measures to evaluate their expected behavior.
 * **`checking_proximity_measure_values.ipynb`:** This notebook aims to reproduce the tables from the aforementioned paper, showcasing specific evaluations of the PBI and APBI proximity measures.
 
-**Current Findings:**
 
-In the last cell of `checking_proximity_measure_values.ipynb`, an error persists. Furthermore, the calculated values from our implementation differ considerably from the results presented in the paper. This discrepancy might indicate a potential error in the underlying methodology or implementation that requires further investigation.
